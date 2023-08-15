@@ -179,7 +179,7 @@
                                 <div class="filters-button-group sm-text-center">
                                     <button class="button is-checked" data-filter="*">View all</button>
                                     <button class="button" data-filter=".tablet">Tablet</button>
-                                    <button class="button" data-filter=".alkali">Electronic Blackboard</button>
+                                    <button class="button" data-filter=".blackboard">Electronic Blackboard</button>
                                     <button class="button" data-filter=".draw">Drawing Tablet</button>
                                     <button class="button" data-filter=".ar">Accessories</button>
                                 </div>
@@ -188,15 +188,26 @@
                             <div style="clear: both;"></div>
 
                             <div class="grid models text-center">
-                                <div class="grid-item model-item transistion tablet">
-                                    <a href="kindleoasis.php"><img src="https://i.ibb.co/KmPtdQd/i01-kindleoasis-1.jpg" alt="" border="0"></a>
+                                <div class="grid-item model-item tablet ium">
+                                   <a href="kindleoasis.php"><img src="https://i.ibb.co/KmPtdQd/i01-kindleoasis-1.jpg" alt="" border="0"></a>
                                     <a href="kindleoasis.php" class="btn btn-default m-top-20">View Details<i class="fa fa-long-arrow-right"></i></a>
-                            </div<!-- End off grid item -->
+                                </div><!-- End off grid item -->
 
-                            <div class="grid-item model-item transition metal ium">
-                            <a href="kobolibra.php"><img src="https://i.ibb.co/3SG9D34/i01-aboutkobo.jpg" alt="i01-71cs42oqxpl-ac-sl1500-1" border="0"></a>
-                            <a href="kobolibra.php" class="btn btn-default m-top-20">View Details<i class="fa fa-long-arrow-right"></i></a>
-                            </div><!-- End off grid item -->
+                                <div class="grid-item model-item blackboard">
+                                <a href="boogie.php"><img src="https://i.ibb.co/Ch6gzCd/i01-blackboard.jpg" alt="" border="0"></a>
+                                <a href="boogie.php" class="btn btn-default m-top-20">View Details<i class="fa fa-long-arrow-right"></i></a>
+                                </div><!-- End off grid item -->
+
+                                <div class="grid-item model-item draw" >
+                                    <a href="ugee.php"><img src="https://i.ibb.co/PQvWfZq/i01-ugee.jpg" alt="" border="0"></a>
+				     <a href="ugee.php" class="btn btn-default m-top-20">View Details<i class="fa fa-long-arrow-right"></i></a>
+                                </div><!-- End off grid item -->
+
+                                <div class="grid-item model-item ar" >
+                                <a href="pen.php"><img src="https://i.ibb.co/V21kfBg/i02-pen.jpg" alt="" border="0"></a>
+				<a href="pen.php" class="btn btn-default m-top-20">View Details<i class="fa fa-long-arrow-right"></i></a>
+                                </div><!-- End off grid item -->
+                            </div>
 
                             <div style="clear: both;"></div>
 

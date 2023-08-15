@@ -157,7 +157,7 @@
                 </div><!--End off container -->
             </section> <!--End off Home Sections-->
 
-            <!--Model Details Section-->
+            <!--Product Details Section-->
             <section id="m_details" class="m_details roomy-100 fix">
                 <div class="container">
                     <div class="row">
@@ -218,12 +218,12 @@
                                 <div class="skill_bar m-top-70">    
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <div class="teamskillbar clearfix m-top-50" data-percent="63%">
+                                            <div class="teamskillbar clearfix m-top-50" data-percent="84%">
                                                 <h6 class="one">Overall Rating <span class="pull-right">84%</span></h6>
                                                 <div class="teamskillbar-bar"></div>
                                             </div> <!-- End Skill Bar -->
 
-                                            <div class="teamskillbar clearfix m-top-50" data-percent="75%">
+                                            <div class="teamskillbar clearfix m-top-50" data-percent="95%">
                                                 <h6 class="two">Battery Life <span class="pull-right">95%</span></h6>
                                                 <div class="teamskillbar-bar"></div>
                                             </div> <!-- End Skill Bar -->
@@ -247,7 +247,7 @@
                         </div>
                     </div><!-- End off row -->
                 </div> <!-- End off container -->
-            </section> <!-- End off Model Details Section -->
+            </section> <!-- End off Details Section -->
 
 
 

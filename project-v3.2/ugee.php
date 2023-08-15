@@ -2,7 +2,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <title>About Us Page</title>
+        <title>UGEE M708 V3</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/png" href="favicon.ico">
@@ -128,7 +128,7 @@
                             <li><a href="index.php">home</a></li> 
 							<li><a href="aboutus.php">about</a></li> 							                   
                             <li><a href="product.php">products</a></li> 							                                   
-                            <li><a href="contactus.php">contact</a></li>    
+                            <li><a href="contactus.php">contact</a></li>   
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div>  
@@ -139,16 +139,17 @@
 
             <!--Home Sections-->
 
-            <section id="hello" class="about-banner bg-mega">
+            <section id="hello" class="model-banner bg-mega">
                 <div class="overlay"></div>
                 <div class="container">
                     <div class="row">
                         <div class="main_home text-center">
-                            <div class="about_text">
-                                <h1 class="text-white text-uppercase">About Us</h1>
-                                <ol class="breadcrumb">
+                            <div class="model_text">
+                                <h1 class="text-white text-uppercase">UGEE M708 V3 Graphics Drawing Tablet</h1>
+                                <ol class="breadcrumb text-uppercase">
                                     <li><a href="#">Home</a></li>
-                                    <li class="active"><a href="#">About Us</a></li>
+                                    <li class="active"><a href="#">UGEE</a></li>
+                                    <li class="active"><a href="#">M708 V3 Graphics Drawing Tablet</a></li>
                                 </ol>
                             </div>
                         </div>
@@ -156,130 +157,104 @@
                 </div><!--End off container -->
             </section> <!--End off Home Sections-->
 
-
-            <!--About Sections-->
-            <section id="feature" class="ab_feature roomy-100">
+            <!--Product Details Section-->
+            <section id="m_details" class="m_details roomy-100 fix">
                 <div class="container">
                     <div class="row">
-                        <div class="main_ab_feature">
-
+                        <div class="main_details">
                             <div class="col-md-6">
-                                <!-- Head Title -->
-                                <div class="head_title">
-                                    <h2>Story about us</h2>
-                                    <h5><em>Bambu procures technology that assists in knowledge assimilation.</em></h5>
-                                    <div class="separator_left"></div>
-                                </div><!-- End off Head Title -->
-
-                                <div class="ab_feature_content wow fadeIn m-top-40">
-                                    <p>Four night school students from humble background decided to come together and share their love for tablet-tech.
-                                    It was through nights and sometimes mornings of studying that they realized how efficient they were with the help of tablets.
-                                    They wanted to share this with the world, but in a way that shifts the market. They want to provide everything from pre-sales to post-sales.</p>
-
-                                    <p>We are BAMBÚ. Young, fast, innovative and everything in between. </p>
-
+                                <div class="m_details_img">
+                                    <img src="https://i.ibb.co/sqJ9Ng2/i02-ugeebig.jpg" alt="" />
                                 </div>
                             </div>
-
                             <div class="col-md-6">
-                                <div class="ab_feature_photo wow fadeIn sm-m-top-40">
+                                <div class="m_details_content m-bottom-40">
+                                    <h2>UGEE M708 V3 Graphics Drawing Tablet,10X6 Inches Drawing Digital Tablet with 8 Hot Keys 8192 Levels Pen | 
+                                        Compatible with Chromebook, Linux, Windows 7/8/10, MAC OS 10.10</h2>
+                                    <p>Large Space Sensitive Digital Drawing Tablets: Pro design UGEE M708 graphic drawing tablet, 
+                                        10 x 6-inch sizeable active drawing space with papery texture surface. A large active 
+                                        area allows you to release your inspiration ideally, provides enormous and smooth Drawing for your 
+                                        digital artwork creation.</p>
+                                    <p>8192 Pressure Technology Stylus: Battery-free stylus technology offers 8192 levels of pressure
+                                        sensitivity, with high accuracy to match with your screen display. In addition, this 
+                                        passive stylus can support mouse function, while pen and eraser offer no-lag sketch, painting 
+                                        experience.</p>
+                                    <p>Powerful Compatibility: This digital drawing pen tablet performs well with Windows 10 / 8 / 7, Mac 
+                                        OS 10.10, Linux, or above.Perfectly compatible with Autodesk Sketchbook/Krita/Adobe Photoshop/
+                                        Photoshop CC/Illustrator/Lightroom/Corel Painter/drawing software.</p>
+                                    <p>Intelligent Shortcuts Design: 8 customizable express keys for Drawing. Support shortcuts 
+                                        for up to eight drawing software. After you set the shortcut keys in each software, and 
+                                        when you use multiple software simultaneously, the graphic tablet can intelligently detect 
+                                        the function of each shortcut keys preset in each drawing software, while you are switching between 
+                                        software. Optimize your drawing productivity and efficiency.</p>
+                                    <p>Widely Uses Plug and Use: It makes your work more manageable with the UGEE driver. 
+                                        With 7.8MM thickness and the light weight make easy to carry, you can use it for remote 
+                                        education and conferencing. Perfect for taking notes, jotting down ideas and business signature 
+                                        during web conferencing, and remote working.</p>
+                                    
+                                </div>
+                                <hr />
+                                <div class="person_details m-top-40">
                                     <div class="row">
-                                <div class="feature_photo wow fadeIn sm-m-top-40">
-                                    <div class="feature_img">
-                                        <img src="https://i.ibb.co/xGGNLLg/i01-students-1.jpg" alt="feature-img" border="0">
+                                        <div class="col-md-5 text-left">
+                                            <p>Product Name:</p>
+                                            <p>Year:</p>
+                                            <p>Height:</p>
+                                            <p>Width:</p>
+                                            <p>Thickness:</p>
+                                            <p>Battery Life:</p>
+                                            <p>Color:</p>
+                                        </div>
+                                        <div class="col-md-7 text-left">
+                                            <p>UGEE M708 V3</p>
+                                            <p>2021</p>
+                                            <p>14"</p>
+                                            <p>9"</p>
+                                            <p>1.8"</p>
+                                            <p>4 Weeks</p>
+                                            <p>Black</p>
+                                        </div>
                                     </div>
                                 </div>
-                                </div>
                             </div>
-                        </div>
-                    </div><!--End off row-->
-                </div><!--End off container -->
-            </section>
 
 
-            <!--Simple Section-->
-            <section id="simple" class="simple bg-grey roomy-80">
-                <div class="container">
-                    <div class="row">
-                        <div class="main_simple text-center">
+
                             <div class="col-md-12">
-                                <h2>Simplicity isn’t simple</h2>
-                                <p>Get in touch with BAMBÚ and embark on a cutting-edge journey in tech. 
-                                    Our innovative gadgets and exceptional service await your curiosity. 
-                                    Contact us now and experience the future.</p>
+                                <div class="skill_bar m-top-70">    
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="teamskillbar clearfix m-top-50" data-percent="75%">
+                                                <h6 class="one">Overall Rating <span class="pull-right">75%</span></h6>
+                                                <div class="teamskillbar-bar"></div>
+                                            </div> <!-- End Skill Bar -->
 
-                                <a href="contactus.php" class="btn btn-default m-top-40">Contact Us <i class="fa fa-long-arrow-right"></i></a>
+                                            <div class="teamskillbar clearfix m-top-50" data-percent="63%">
+                                                <h6 class="two">Battery Life <span class="pull-right">63%</span></h6>
+                                                <div class="teamskillbar-bar"></div>
+                                            </div> <!-- End Skill Bar -->
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="teamskillbar clearfix m-top-50" data-percent="83%">
+                                                <h6 class="three">Display <span class="pull-right">83%</span></h6>
+                                                <div class="teamskillbar-bar"></div>
+                                            </div> <!-- End Skill Bar -->
+
+                                            <div class="teamskillbar clearfix m-top-50" data-percent="60%">
+                                                <h6 class="foure">Storage <span class="pull-right">60%</span></h6>
+                                                <div class="teamskillbar-bar"></div>
+                                            </div> <!-- End Skill Bar -->
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+
                         </div>
-                    </div>
-                </div>
-            </section>
+                    </div><!-- End off row -->
+                </div> <!-- End off container -->
+            </section> <!-- End off Details Section -->
 
-
-            <!--Models section-->
-            <section id="teams" class="teams roomy-80">
-                <div class="container">
-                    <div class="row">
-                        <div class="main_teams">
-                            <div class="col-md-12">
-                                <div class="head_title text-left sm-text-center wow fadeInDown">
-                                    <h2>Meet our team</h2>
-                                    <h5><em>A dynamic group of four talented students fueling BAMBÚ's vision. Passionate about tech and innovation, we're driving the future together.</em></h5>
-                                    <div class="separator_left"></div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 col-sm-6">
-                                <div class="team_item m-top-30">
-                                    <div class="team_img">
-                                        <img src="https://i.ibb.co/9V4YH70/i01-photo-2023-08-01-10-02-49.jpg" alt="" />
-                                        <div class="team_caption">
-                                            <h4 class="">Marvyn Tan</h4>
-                                            <h5><em>Founder at BAMBÚ</em></h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- End off col-md-3 -->
-
-                            <div class="col-md-4 col-sm-6">
-                                <div class="team_item m-top-30">
-                                    <div class="team_img">
-                                        <img src="https://i.ibb.co/rwMLjBh/Whats-App-Image-2023-08-13-at-16-26-56.jpg" alt="" />
-                                        <div class="team_caption">
-                                            <h4 class="">Nishantha K</h4>
-                                            <h5><em>Chief Technology Officer</em></h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- End off col-md-3 -->
-
-                            <div class="col-md-4 col-sm-6">
-                                <div class="team_item m-top-30">
-                                    <div class="team_img">
-                                        <img src="https://i.ibb.co/z2wHf26/hakim.jpg" alt="" />
-                                        <div class="team_caption">
-                                            <h4 class="">Hakiim Hamsan</h4>
-                                            <h5><em>Head of Manufacturing</em></h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- End off col-md-3 -->
-                            
-                                                        <div class="col-md-4 col-sm-6">
-                                <div class="team_item m-top-30">
-                                    <div class="team_img">
-                                        <img src="https://i.ibb.co/BTbctNM/azhar.jpg" alt="" />
-                                        <div class="team_caption">
-                                            <h4 class="">Azhar Shukor</h4>
-                                            <h5><em>Research and Development Scientist</em></h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- End off col-md-3 -->
-                        </div>
-                    </div>
-                </div>
-            </section>
 
 
             <!--Testimonial Section-->
@@ -339,6 +314,7 @@
                                     </div>
 
                                 </div>
+
 
                                 <!-- Controls -->
                                 <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -403,7 +379,56 @@
             </section> <!--End off Testimonial section -->
 
 
+            <!--Contact Us Section-->
+            <section id="contact" class="contact fix">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_contact p-top-100">
 
+                            <div class="col-md-6 sm-m-top-30">
+                                <form class="" action="process_form.php" method="post">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group"> 
+                                                <label>Your Name *</label>
+                                                <input id="first_name" name="name" type="text" class="form-control" required="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Your Email *</label>
+                                                <input id="email" name="email" type="text" class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-12">
+    <div class="form-group"> 
+        <label>Your Message *</label>
+        <textarea name="message" class="form-control" rows="6"></textarea>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-default">SEND MESSAGE <i class="fa fa-long-arrow-right"></i></button>
+    </div>
+</div>
+
+
+                                    </div>
+
+                                </form>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="contact_img">
+                                    <img src="https://i.ibb.co/XZ7XTxg/i01-person-using-ipad.jpg" alt="" />
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div><!--End off row -->
+                </div><!--End off container -->
+            </section><!--End off Contact Section-->
 
             <!--Company section-->
 
@@ -439,10 +464,10 @@
                             </div>
                             <div class="col-md-6 text-right sm-text-center sm-m-top-20">
                                 <ul class="list-inline">
-                                    <li><a href="https://www.facebook.com/">Facebook</a></li>
-                                    <li><a href="https://twitter.com/">Twitter</a></li>
-                                    <li><a href="https://www.instagram.com/">Instagram</a></li>
-                                   
+                                    <li><a href="">Facebook</a></li>
+                                    <li><a href="">Twitter</a></li>
+                                    <li><a href="">Instagram</a></li>
+                                    <li><a href="">Pinterest</a></li>
                                 </ul>
                             </div>
                         </div>

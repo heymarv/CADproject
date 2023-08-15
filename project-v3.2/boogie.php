@@ -2,7 +2,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <title>About Us Page</title>
+        <title>Boogie Board Blackboard</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/png" href="favicon.ico">
@@ -128,7 +128,7 @@
                             <li><a href="index.php">home</a></li> 
 							<li><a href="aboutus.php">about</a></li> 							                   
                             <li><a href="product.php">products</a></li> 							                                   
-                            <li><a href="contactus.php">contact</a></li>    
+                            <li><a href="contactus.php">contact</a></li>   
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div>  
@@ -139,16 +139,17 @@
 
             <!--Home Sections-->
 
-            <section id="hello" class="about-banner bg-mega">
+            <section id="hello" class="model-banner bg-mega">
                 <div class="overlay"></div>
                 <div class="container">
                     <div class="row">
                         <div class="main_home text-center">
-                            <div class="about_text">
-                                <h1 class="text-white text-uppercase">About Us</h1>
-                                <ol class="breadcrumb">
+                            <div class="model_text">
+                                <h1 class="text-white text-uppercase">Boogie Board Blackboard</h1>
+                                <ol class="breadcrumb text-uppercase">
                                     <li><a href="#">Home</a></li>
-                                    <li class="active"><a href="#">About Us</a></li>
+                                    <li class="active"><a href="#">Boogie Board</a></li>
+                                    <li class="active"><a href="#">Blackboard</a></li>
                                 </ol>
                             </div>
                         </div>
@@ -156,130 +157,94 @@
                 </div><!--End off container -->
             </section> <!--End off Home Sections-->
 
-
-            <!--About Sections-->
-            <section id="feature" class="ab_feature roomy-100">
+            <!--Product Details Section-->
+            <section id="m_details" class="m_details roomy-100 fix">
                 <div class="container">
                     <div class="row">
-                        <div class="main_ab_feature">
-
+                        <div class="main_details">
                             <div class="col-md-6">
-                                <!-- Head Title -->
-                                <div class="head_title">
-                                    <h2>Story about us</h2>
-                                    <h5><em>Bambu procures technology that assists in knowledge assimilation.</em></h5>
-                                    <div class="separator_left"></div>
-                                </div><!-- End off Head Title -->
-
-                                <div class="ab_feature_content wow fadeIn m-top-40">
-                                    <p>Four night school students from humble background decided to come together and share their love for tablet-tech.
-                                    It was through nights and sometimes mornings of studying that they realized how efficient they were with the help of tablets.
-                                    They wanted to share this with the world, but in a way that shifts the market. They want to provide everything from pre-sales to post-sales.</p>
-
-                                    <p>We are BAMBÚ. Young, fast, innovative and everything in between. </p>
-
+                                <div class="m_details_img">
+                                    <img src="https://i.ibb.co/t8KTNCY/i01-boogieboard.jpg" alt="" />
                                 </div>
                             </div>
-
                             <div class="col-md-6">
-                                <div class="ab_feature_photo wow fadeIn sm-m-top-40">
+                                <div class="m_details_content m-bottom-40">
+                                    <h2>Boogie Board Blackboard Reusable Notebook with Letter-Size Writing Tablet with Stylus, Instant Erase and Templates (8.5”x11”)</h2>
+                                    <p>BLACKBOARD is the reusable notebook perfect for writing notes, marking up documents or sketching out ideas. 
+                                        The Blackboard reusable notebook in Letter size comes with an 8.5”x 11” semi-transparent writing tablet enabled with the Instant Erase, 
+                                        Exact-Erase and Erase-Lock, the Blackboard pen stylus with an eraser, 4 easy-to-swap templates and a magnetic pen holder.</p>
+                                    <p>TAKE NOTES YOUR WAY: Slip one of the four note-taking templates (or any document) in the back and use the stylus to start writing 
+                                        on the semi-transparent writing tablet. Blackboard Letter templates include Dot Grid, Black, Planner and Lines.</p>
+                                    <p>ERASE WITH EASE: Push the button to clear everything or use the Exact-Erase feature on the writing 
+                                        tablet and stylus eraser to erase exactly what you want. 
+                                        You can also lock the writing tablet with the Erase-Lock button so you don’t accidentally erase your notes.</p>
+                                    <p>SAVE & ORGANIZE INSTANTLY: Scan to save and organize your notes using our Blackboard app for iOS and Android.</p>
+                                    <p>AUTHENTIC: The reusable, semi-transparent writing tablet uses Boogie Board’s patented technology made of scientifically
+                                        engineered materials which offers a natural writing experience and a bright, durable screen that lasts for years.</p>
+                                    
+                                </div>
+                                <hr />
+                                <div class="person_details m-top-40">
                                     <div class="row">
-                                <div class="feature_photo wow fadeIn sm-m-top-40">
-                                    <div class="feature_img">
-                                        <img src="https://i.ibb.co/xGGNLLg/i01-students-1.jpg" alt="feature-img" border="0">
+                                        <div class="col-md-5 text-left">
+                                            <p>Product Name:</p>
+                                            <p>Year:</p>
+                                            <p>Height:</p>
+                                            <p>Width:</p>
+                                            <p>Thickness:</p>
+                                            <p>Battery Life:</p>
+                                            <p>Color:</p>
+                                        </div>
+                                        <div class="col-md-7 text-left">
+                                            <p>Boogie Board Blackboard</p>
+                                            <p>2018</p>
+                                            <p>11"</p>
+                                            <p>9"</p>
+                                            <p>0.25"</p>
+                                            <p>9 Weeks</p>
+                                            <p>Black</p>
+                                        </div>
                                     </div>
                                 </div>
-                                </div>
                             </div>
-                        </div>
-                    </div><!--End off row-->
-                </div><!--End off container -->
-            </section>
 
 
-            <!--Simple Section-->
-            <section id="simple" class="simple bg-grey roomy-80">
-                <div class="container">
-                    <div class="row">
-                        <div class="main_simple text-center">
+
                             <div class="col-md-12">
-                                <h2>Simplicity isn’t simple</h2>
-                                <p>Get in touch with BAMBÚ and embark on a cutting-edge journey in tech. 
-                                    Our innovative gadgets and exceptional service await your curiosity. 
-                                    Contact us now and experience the future.</p>
+                                <div class="skill_bar m-top-70">    
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="teamskillbar clearfix m-top-50" data-percent="78%">
+                                                <h6 class="one">Overall Rating <span class="pull-right">78%</span></h6>
+                                                <div class="teamskillbar-bar"></div>
+                                            </div> <!-- End Skill Bar -->
 
-                                <a href="contactus.php" class="btn btn-default m-top-40">Contact Us <i class="fa fa-long-arrow-right"></i></a>
+                                            <div class="teamskillbar clearfix m-top-50" data-percent="80%">
+                                                <h6 class="two">Battery Life <span class="pull-right">80%</span></h6>
+                                                <div class="teamskillbar-bar"></div>
+                                            </div> <!-- End Skill Bar -->
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="teamskillbar clearfix m-top-50" data-percent="82%">
+                                                <h6 class="three">Display <span class="pull-right">82%</span></h6>
+                                                <div class="teamskillbar-bar"></div>
+                                            </div> <!-- End Skill Bar -->
+
+                                            <div class="teamskillbar clearfix m-top-50" data-percent="76%">
+                                                <h6 class="foure">Storage <span class="pull-right">76%</span></h6>
+                                                <div class="teamskillbar-bar"></div>
+                                            </div> <!-- End Skill Bar -->
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+
                         </div>
-                    </div>
-                </div>
-            </section>
+                    </div><!-- End off row -->
+                </div> <!-- End off container -->
+            </section> <!-- End off Product Details Section -->
 
-
-            <!--Models section-->
-            <section id="teams" class="teams roomy-80">
-                <div class="container">
-                    <div class="row">
-                        <div class="main_teams">
-                            <div class="col-md-12">
-                                <div class="head_title text-left sm-text-center wow fadeInDown">
-                                    <h2>Meet our team</h2>
-                                    <h5><em>A dynamic group of four talented students fueling BAMBÚ's vision. Passionate about tech and innovation, we're driving the future together.</em></h5>
-                                    <div class="separator_left"></div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 col-sm-6">
-                                <div class="team_item m-top-30">
-                                    <div class="team_img">
-                                        <img src="https://i.ibb.co/9V4YH70/i01-photo-2023-08-01-10-02-49.jpg" alt="" />
-                                        <div class="team_caption">
-                                            <h4 class="">Marvyn Tan</h4>
-                                            <h5><em>Founder at BAMBÚ</em></h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- End off col-md-3 -->
-
-                            <div class="col-md-4 col-sm-6">
-                                <div class="team_item m-top-30">
-                                    <div class="team_img">
-                                        <img src="https://i.ibb.co/rwMLjBh/Whats-App-Image-2023-08-13-at-16-26-56.jpg" alt="" />
-                                        <div class="team_caption">
-                                            <h4 class="">Nishantha K</h4>
-                                            <h5><em>Chief Technology Officer</em></h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- End off col-md-3 -->
-
-                            <div class="col-md-4 col-sm-6">
-                                <div class="team_item m-top-30">
-                                    <div class="team_img">
-                                        <img src="https://i.ibb.co/z2wHf26/hakim.jpg" alt="" />
-                                        <div class="team_caption">
-                                            <h4 class="">Hakiim Hamsan</h4>
-                                            <h5><em>Head of Manufacturing</em></h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- End off col-md-3 -->
-                            
-                                                        <div class="col-md-4 col-sm-6">
-                                <div class="team_item m-top-30">
-                                    <div class="team_img">
-                                        <img src="https://i.ibb.co/BTbctNM/azhar.jpg" alt="" />
-                                        <div class="team_caption">
-                                            <h4 class="">Azhar Shukor</h4>
-                                            <h5><em>Research and Development Scientist</em></h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- End off col-md-3 -->
-                        </div>
-                    </div>
-                </div>
-            </section>
 
 
             <!--Testimonial Section-->
@@ -339,6 +304,7 @@
                                     </div>
 
                                 </div>
+
 
                                 <!-- Controls -->
                                 <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -403,7 +369,56 @@
             </section> <!--End off Testimonial section -->
 
 
+            <!--Contact Us Section-->
+            <section id="contact" class="contact fix">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_contact p-top-100">
 
+                            <div class="col-md-6 sm-m-top-30">
+                                <form class="" action="process_form.php" method="post">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group"> 
+                                                <label>Your Name *</label>
+                                                <input id="first_name" name="name" type="text" class="form-control" required="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Your Email *</label>
+                                                <input id="email" name="email" type="text" class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-12">
+    <div class="form-group"> 
+        <label>Your Message *</label>
+        <textarea name="message" class="form-control" rows="6"></textarea>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-default">SEND MESSAGE <i class="fa fa-long-arrow-right"></i></button>
+    </div>
+</div>
+
+
+                                    </div>
+
+                                </form>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="contact_img">
+                                    <img src="https://i.ibb.co/XZ7XTxg/i01-person-using-ipad.jpg" alt="" />
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div><!--End off row -->
+                </div><!--End off container -->
+            </section><!--End off Contact Section-->
 
             <!--Company section-->
 
@@ -439,10 +454,10 @@
                             </div>
                             <div class="col-md-6 text-right sm-text-center sm-m-top-20">
                                 <ul class="list-inline">
-                                    <li><a href="https://www.facebook.com/">Facebook</a></li>
-                                    <li><a href="https://twitter.com/">Twitter</a></li>
-                                    <li><a href="https://www.instagram.com/">Instagram</a></li>
-                                   
+                                    <li><a href="">Facebook</a></li>
+                                    <li><a href="">Twitter</a></li>
+                                    <li><a href="">Instagram</a></li>
+                                    <li><a href="">Pinterest</a></li>
                                 </ul>
                             </div>
                         </div>

@@ -247,9 +247,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
                             <i class="fa fa-bars"></i>
                         </button>
                         <a class="navbar-brand" href="index.php">
-
-                            <img src="assets/images/logo.png" class="logo logo-display" alt="">
-                            <img src="assets/images/logo-black.png" class="logo logo-scrolled" alt="">
+                            <div id="homepage-text" class="logo logo-display">BAMBÚ</div>
+                            <div id="homepage-text-scroll" class="logo logo-scrolled">BAMBÚ</div>
 
                         </a>
                     </div>
@@ -260,8 +259,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
                         <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
                             <li><a href="index.php">home</a></li> 
 							<li><a href="aboutus.php">about</a></li> 							                   
-                            <li><a href="product.php">products</a></li> 							
-                            <li><a href="blog.php">blog</a></li>                                    
+                            <li><a href="product.php">products</a></li> 							                                  
                             <li><a href="contactus.php">contact</a></li>    
                         </ul>
                     </div><!-- /.navbar-collapse -->
@@ -457,28 +455,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
 
 
         <!-- paradise slider js -->
-
-        <script src="http://maps.google.com/maps/api/js?key=AIzaSyD_tAQD36pKp9v4at5AnpGbvBUsLCOSJx8"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgJpCPtb0pNhWxJjVo-c3074USAdY1VTI>&libraries=places"></script>
         <script src="assets/js/gmaps.min.js"></script>
         <script>
-            var map = new GMaps({
-                el: '.ourmap',
-                lat: -12.043333,
-                lng: -77.028333,
-                scrollwheel: false,
-                zoom: 15,
-                zoomControl: true,
-                panControl: false,
-                
-                streetViewControl: false,
-                mapTypeControl: false,
-                overviewMapControl: false,
-                clickable: false,
-                styles: [{'stylers': [{'hue': 'gray'}, {saturation: -100},
-                            {gamma: 0.80}]}]
-            });
+	var map = new google.maps.Map(document.querySelector('.ourmap'), {
+	    center: { lat: 1.3083, lng: 103.7773 },
+	    zoom: 15,
+	    zoomControl: true,
+	    panControl: false,
+	    streetViewControl: false,
+	    mapTypeControl: false,
+	    overviewMapControl: false,
+	    clickable: false,
+	    styles: [{ 'stylers': [{ 'hue': 'gray' }, { 'saturation': -100 }, { 'gamma': 0.80 }] }]
+	});
 
-        </script>
+	var marker = new google.maps.Marker({
+	    position: { lat: 1.3083, lng: 103.7773 },
+	    map: map,
+	    title: 'BAMBU'
+	});
+        </script>
 
        
 
