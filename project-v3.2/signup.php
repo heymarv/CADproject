@@ -1,5 +1,6 @@
 <?php
 // Sign Up Process
+session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
     // Retrieve user inputs
     $name = $_POST['name'];
@@ -15,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
         echo "Email already exists. Please log in or use a different email.";
     } else {
         // If the email is not already registered, insert the user data into the database
-        // Hash the password for security (you can use PHP's password_hash() function)
+        
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
         $sql_insert_user = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$hashed_password')";

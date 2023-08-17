@@ -1,9 +1,20 @@
 <?php
+
+include 'cart_actions.php';
+
+// Only fetch cart items if the user is logged in.
+if (isset($_SESSION['user_id'])) {
+    $currentUserId = $_SESSION['user_id'];
+    $cartItems = getCartItems($currentUserId);
+} else {
+    $cartItems = [];
+}
+
 // Replace the following variables with your actual database credentials
-$host = "localhost"; // For example, "localhost" or IP address like "127.0.0.1"
+$host = "localhost";
 $username = "root";
 $password = "";
-$dbname = "project"; // Replace with your database name
+$dbname = "project";
 
 // Establish a database connection
 $conn = new mysqli($host, $username, $password, $dbname);
@@ -13,112 +24,77 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Sign Up Form
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
-    // Retrieve user inputs
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    // Validate user inputs (optional)
-
-    // Validate email format
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        // If the email format is incorrect, show an alert message
-        echo "<script>alert('Invalid email format. Please provide a valid email address.');</script>";
-    } else {
-        // Check if the email already exists in the database
-        $sql_check_email = "SELECT * FROM users WHERE email = '$email'";
-        $result_check_email = $conn->query($sql_check_email);
-
-        if ($result_check_email->num_rows > 0) {
-            // If the email is already registered, show an alert message
-            echo "<script>alert('Email already exists. Please log in or use a different email.');</script>";
-        } else {
-            // If the email is not already registered and has a valid format, insert the user data into the database
-            // Hash the password for security (you can use PHP's password_hash() function)
-            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-            $sql_insert_user = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$hashed_password')";
-
-            if ($conn->query($sql_insert_user) === TRUE) {
-                // Display a success message using JavaScript alert after successful sign-up
-                echo "<F>alert('Sign-up successful! You can now log in.');</script>";
-            } else {
-                // If there was an error inserting the user data, show an alert message
-                echo "<script>alert('Error: " . $sql_insert_user . "\\n" . $conn->error . "');</script>";
-            }
-        }
-    }
-}
-
-
-
-
-
-
-
-// Close the database connection
-$conn->close();
-
-
-
-
-
 // Initialize the login status variable
 $login_status = '';
 
-// Login Process
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
-    // Replace the following variables with your actual database credentials
-    $host = "localhost"; // For example, "localhost" or IP address like "127.0.0.1"
-    $username = "root";
-    $password = "";
-    $dbname = "project"; // Replace with your database name
+// Check request method and form type
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['signup'])) {
+        // Sign Up Logic
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
 
-    // Establish a database connection
-    $conn = new mysqli($host, $username, $password, $dbname);
+        // Validate email format
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            echo "<script>alert('Invalid email format. Please provide a valid email address.');</script>";
+        } else {
+            $stmt_check_email = $conn->prepare("SELECT * FROM users WHERE email = ?");
+            $stmt_check_email->bind_param('s', $email);
+            $stmt_check_email->execute();
+            $result_check_email = $stmt_check_email->get_result();
 
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+            if ($result_check_email->num_rows > 0) {
+                echo "<script>alert('Email already exists. Please log in or use a different email.');</script>";
+            } else {
+                $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    // Check if the required keys exist in the $_POST array
-    if (isset($_POST['login_email']) && isset($_POST['login_password'])) {
-        // Retrieve user inputs for login form
+                $stmt_insert_user = $conn->prepare("INSERT INTO users (name, email, password) VALUES (?, ?, ?)");
+                $stmt_insert_user->bind_param('sss', $name, $email, $hashed_password);
+
+                if ($stmt_insert_user->execute()) {
+                    echo "<script>alert('Sign-up successful! You can now log in.');</script>";
+                } else {
+                    echo "<script>alert('Error: " . $stmt_insert_user->error . "');</script>";
+                }
+
+                $stmt_insert_user->close();
+            }
+
+            $stmt_check_email->close();
+        }
+        
+    } elseif (isset($_POST['login'])) {
+        // Login Logic
         $login_email = $_POST['login_email'];
         $login_password = $_POST['login_password'];
 
-        // Validate user inputs for login form (optional)
-
-        // Perform the login check (compare with the stored credentials in the database)
-        // Assuming you have a table called "users" with columns "email" and "password"
-        $sql_check_login = "SELECT * FROM users WHERE email = '$login_email'";
-        $result_check_login = $conn->query($sql_check_login);
+        $stmt_check_login = $conn->prepare("SELECT * FROM users WHERE email = ?");
+        $stmt_check_login->bind_param('s', $login_email);
+        $stmt_check_login->execute();
+        $result_check_login = $stmt_check_login->get_result();
 
         if ($result_check_login->num_rows > 0) {
             $row = $result_check_login->fetch_assoc();
-            // Verify the hashed password
             if (password_verify($login_password, $row['password'])) {
-                // If login successful, set the login status to success
                 $login_status = "Login Successful!";
+                $_SESSION['user_id'] = $row['id'];
+                
             } else {
-                // If the password is incorrect, set the login status to failure
                 $login_status = "Incorrect password. Please try again.";
             }
         } else {
-            // If the email is not found in the database, set the login status to failure
             $login_status = "Email not found. Please sign up or try a different email.";
         }
-    } else {
-        // If the required keys are not found in $_POST, set an appropriate login status
-        $login_status = "Please enter both email and password to log in.";
-    }
 
-    // Close the database connection
-    $conn->close();
+        echo "<script>alert('$login_status');</script>";
+
+        $stmt_check_login->close();
+    }
 }
+
+$conn->close();
+
 
 ?>
 <!doctype html>
@@ -211,34 +187,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
                                     <i class="fa fa-shopping-bag"></i>
-                                    <span class="badge">3</span>
                                 </a>
                                 <ul class="dropdown-menu cart-list">
+                                    <ul class="dropdown-menu cart-list">
+                                    <?php foreach ($cartItems as $item): ?>
                                     <li>
-                                        <a href="#" class="photo"><img src="assets/images/thumb01.jpg" class="cart-thumb" alt="" /></a>
-                                        <h6><a href="#">Delica omtantur </a></h6>
-                                        <p class="m-top-10">2x - <span class="price">$99.99</span></p>
+                                    <h6><a href="#"><?php echo $item['name']; ?></a></h6>
+                                    <p class="m-top-10"><?php echo $item['quantity']; ?>x - <span class="price">$<?php echo number_format($item['price'], 2); ?></span></p>
                                     </li>
-                                    <li>
-                                        <a href="#" class="photo"><img src="assets/images/thumb01.jpg" class="cart-thumb" alt="" /></a>
-                                        <h6><a href="#">Delica omtantur </a></h6>
-                                        <p class="m-top-10">2x - <span class="price">$99.99</span></p>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="photo"><img src="assets/images/thumb01.jpg" class="cart-thumb" alt="" /></a>
-                                        <h6><a href="#">Delica omtantur </a></h6>
-                                        <p class="m-top-10">2x - <span class="price">$99.99</span></p>
-                                    </li>
-                                    <!---- More List ---->
-                                    <li class="total">
-                                        <span class="pull-right"><strong>Total</strong>: $0.00</span>
-                                        <a href="#" class="btn btn-cart">Cart</a>
-                                    </li>
+                                    <?php endforeach; ?>
+                                </ul>
                                 </ul>
                             </li>
-
                         </ul>
-                    </div>        
+                    </div>           
                     <!-- End Atribute Navigation -->
 
                     <!-- Start Header Navigation -->
@@ -397,9 +359,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
                 <div class="container">
                     <div class="row">
                         <div class="main_company roomy-100 text-center">
-                            <h3 class="text-uppercase">pouseidon.</h3>
-                            <p>7th floor - Palace Building - 221b Walk of Fame - London- United Kingdom</p>
-                            <p>(+84). 123. 456. 789  -  info@poiseidon.lnk</p>
+                            <h3 class="text-uppercase">bambu.</h3>
+                            <p>7500 Dover Road Singapore 139651</p>
+                            <p>(+65) 90503211  -  info@bambu.com</p>
                         </div>
                     </div>
                 </div>
@@ -455,7 +417,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
 
 
         <!-- paradise slider js -->
-<script src="https://maps.googleapis.com/maps/api/js?key=api_key_here>&libraries=places"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgJpCPtb0pNhWxJjVo-c3074USAdY1VTI&libraries=places"></script>
         <script src="assets/js/gmaps.min.js"></script>
         <script>
 	var map = new google.maps.Map(document.querySelector('.ourmap'), {

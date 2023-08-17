@@ -1,5 +1,26 @@
 <!doctype html>
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+    
+    <?php
+session_start();
+$currentUserId = null;
+
+if (isset($_SESSION['user_id'])) {
+    $currentUserId = $_SESSION['user_id'];
+}
+$host = "localhost"; 
+$username = "root";
+$password = "";
+$dbname = "project"; // database name
+
+// Establish a database connection
+$conn = new mysqli($host, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+?>
     <head>
         <meta charset="utf-8">
         <title>About Us Page</title>
@@ -69,7 +90,6 @@
                     </div>
                 </div>
                 <!-- End Top Search -->
-
                 <div class="container">    
                     <!-- Start Atribute Navigation -->
                     <div class="attr-nav">
@@ -78,34 +98,20 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
                                     <i class="fa fa-shopping-bag"></i>
-                                    <span class="badge">3</span>
                                 </a>
                                 <ul class="dropdown-menu cart-list">
+                                    <ul class="dropdown-menu cart-list">
+                                    <?php foreach ($cartItems as $item): ?>
                                     <li>
-                                        <a href="#" class="photo"><img src="assets/images/thumb01.jpg" class="cart-thumb" alt="" /></a>
-                                        <h6><a href="#">Delica omtantur </a></h6>
-                                        <p class="m-top-10">2x - <span class="price">$99.99</span></p>
+                                    <h6><a href="#"><?php echo $item['name']; ?></a></h6>
+                                    <p class="m-top-10"><?php echo $item['quantity']; ?>x - <span class="price">$<?php echo number_format($item['price'], 2); ?></span></p>
                                     </li>
-                                    <li>
-                                        <a href="#" class="photo"><img src="assets/images/thumb01.jpg" class="cart-thumb" alt="" /></a>
-                                        <h6><a href="#">Delica omtantur </a></h6>
-                                        <p class="m-top-10">2x - <span class="price">$99.99</span></p>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="photo"><img src="assets/images/thumb01.jpg" class="cart-thumb" alt="" /></a>
-                                        <h6><a href="#">Delica omtantur </a></h6>
-                                        <p class="m-top-10">2x - <span class="price">$99.99</span></p>
-                                    </li>
-                                    <!---- More List ---->
-                                    <li class="total">
-                                        <span class="pull-right"><strong>Total</strong>: $0.00</span>
-                                        <a href="#" class="btn btn-cart">Cart</a>
-                                    </li>
+                                    <?php endforeach; ?>
+                                </ul>
                                 </ul>
                             </li>
-
                         </ul>
-                    </div>        
+                    </div>          
                     <!-- End Atribute Navigation -->
 
                     <!-- Start Header Navigation -->

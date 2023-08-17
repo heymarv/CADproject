@@ -1,5 +1,33 @@
 <!doctype html>
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+    
+            <?php
+session_start();
+$currentUserId = null;
+
+if (isset($_SESSION['user_id'])) {
+    $currentUserId = $_SESSION['user_id'];
+}
+
+$host = "localhost"; 
+$username = "root";
+$password = "";
+$dbname = "project";
+
+// Establish a database connection
+$conn = new mysqli($host, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+include 'cart_actions.php';
+$cartItems = getCartItems($currentUserId);
+
+?>
+    
+
     <head>
         <meta charset="utf-8">
         <title>Kindle Paperwhite</title>
@@ -35,6 +63,8 @@
         <link rel="stylesheet" href="assets/css/responsive.css" />
 
         <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/e6COe7SPd/tA/0sSdO8wPjN4E+m/-8j4Ck4SOF4y4Ck=" crossorigin="anonymous"></script>
+
     </head>
 
     <body data-spy="scroll" data-target=".navbar-collapse">
@@ -78,34 +108,21 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
                                     <i class="fa fa-shopping-bag"></i>
-                                    <span class="badge">3</span>
                                 </a>
                                 <ul class="dropdown-menu cart-list">
+                                       
+                                    <?php 
+                                    foreach ($cartItems as $item): ?>
                                     <li>
-                                        <a href="#" class="photo"><img src="assets/images/thumb01.jpg" class="cart-thumb" alt="" /></a>
-                                        <h6><a href="#">Delica omtantur </a></h6>
-                                        <p class="m-top-10">2x - <span class="price">$99.99</span></p>
+                                    <h6><a href="#"><?php echo $item['name']; ?></a></h6>
+                                    <p class="m-top-10"><?php echo $item['quantity']; ?>x - <span class="price">$<?php echo number_format($item['price'], 2); ?></span></p>
                                     </li>
-                                    <li>
-                                        <a href="#" class="photo"><img src="assets/images/thumb01.jpg" class="cart-thumb" alt="" /></a>
-                                        <h6><a href="#">Delica omtantur </a></h6>
-                                        <p class="m-top-10">2x - <span class="price">$99.99</span></p>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="photo"><img src="assets/images/thumb01.jpg" class="cart-thumb" alt="" /></a>
-                                        <h6><a href="#">Delica omtantur </a></h6>
-                                        <p class="m-top-10">2x - <span class="price">$99.99</span></p>
-                                    </li>
-                                    <!---- More List ---->
-                                    <li class="total">
-                                        <span class="pull-right"><strong>Total</strong>: $0.00</span>
-                                        <a href="#" class="btn btn-cart">Cart</a>
-                                    </li>
+                                    <?php endforeach; ?>
+                                
                                 </ul>
                             </li>
-
                         </ul>
-                    </div>        
+                    </div>      
                     <!-- End Atribute Navigation -->
 
                     <!-- Start Header Navigation -->
@@ -185,6 +202,7 @@
                                         thousands of audiobooks, and more.</p>
                                     <p>Go hands-free – Pair with an Audible subscription and 
                                         Bluetooth headphones or speakers to listen to your story.</p>
+                                    <button class="add-to-cart" data-product-id="1">Add to Cart</button>
                                     
                                 </div>
                                 <hr />
@@ -195,7 +213,7 @@
                                             <p>Year:</p>
                                             <p>Height:</p>
                                             <p>Width:</p>
-                                            <p>Thickness:</p>
+                                           <p>Thickness:</p>
                                             <p>Battery Life:</p>
                                             <p>Color:</p>
                                         </div>
@@ -514,6 +532,24 @@
 
         <script src="assets/js/plugins.js"></script>
         <script src="assets/js/main.js"></script>
+                
+                <script>
+$(document).ready(function() {
+    $(".add-to-cart").click(function() {
+        var productId = $(this).data("product-id");
+        
+        $.post("addToCart.php", { product_id: productId }, function(data) {
+            alert(data);
+        }).fail(function() {
+            alert("Error adding to cart.");
+        });
+    });
+});
+
+</script>
+
+
+
 
     </body>
 </html>
